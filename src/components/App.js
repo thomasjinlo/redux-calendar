@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Digital from './digital/container'
-// import Calendar from './components/calendar/container'
+import Digital from './digital/container';
+import Calendar from './calendar/container';
 
 export default () => {
   return (
     <div>
       <Digital />
+      <Calendar />
     </div>
   )
 };
