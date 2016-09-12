@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './calendar.css';
+import EmptySquare from './emptySquare';
+import Square from './square';
 
 const startDay = date => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
 const numDaysInMonth = date => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
