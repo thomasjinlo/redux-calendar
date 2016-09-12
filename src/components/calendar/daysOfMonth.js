@@ -8,7 +8,7 @@ const numDaysInMonth = date => new Date(date.getFullYear(), date.getMonth() + 1,
 const renderEmptySquares = (startDay, collection=[]) => {
   if (startDay === 0) return;
 
-  collection.push(<div key={startDay} className="weekday"></div>);
+  collection.push(<div key={startDay} className="squares"></div>);
   renderEmptySquares((startDay - 1), collection)
 
   return collection.map( div => div);
@@ -17,7 +17,7 @@ const renderEmptySquares = (startDay, collection=[]) => {
 const renderSquares = (daysInMonth, collection=[]) => {
   if (daysInMonth === 0) return;
 
-  collection.unshift(<div key={daysInMonth} id={daysInMonth} className="weekday">{daysInMonth}</div>);
+  collection.unshift(<div key={daysInMonth} id={daysInMonth} className="squares">{daysInMonth}</div>);
   renderSquares((daysInMonth - 1), collection);
 
   return collection.map( div => div);
@@ -25,7 +25,7 @@ const renderSquares = (daysInMonth, collection=[]) => {
 
 export default props => {
   return (
-    <div>
+    <div className="squaresContainer">
       { renderEmptySquares(startDay(props.date)) }
       { renderSquares(numDaysInMonth(props.date)) }
     </div>

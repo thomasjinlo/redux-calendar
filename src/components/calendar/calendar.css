@@ -1,10 +1,26 @@
 .calendarContainer {
-  border: 1px solid;
+  border: 5px solid #38004B;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
+  background-color: #03E3F9;
+}
+
+.weekdaysContainer, .squaresContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.weekday, .squares {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0.6%;
+  width: 13%;
+  background-color: #FDFD47;
+  color: #000000;
 }
 
 .weekday {
-  width: 50px;
-  height: 50px;
+  background-color: #FD3195;
 }
