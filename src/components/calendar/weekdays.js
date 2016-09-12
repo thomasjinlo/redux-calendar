@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './weekdays.css'
+import './calendar.css'
 
 const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
