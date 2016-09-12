@@ -3,7 +3,7 @@ import React from 'react';
 import './calendar.css';
 
 const startDay = date => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-const numDaysInMonth = date => new Date(date.getFullYear(), date.getMonth() + 1, 0);
+const numDaysInMonth = date => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
 const renderEmptySquares = (startDay, collection=[]) => {
   if (startDay === 0) return;
