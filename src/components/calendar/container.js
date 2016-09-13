@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { changeDateInMonth } from '../../actions';
+import { setDateToday, changeDateInMonth, setActiveToday } from '../../actions';
 
 import './calendar.css';
 import Weekdays from './weekdays';
 import DaysOfMonth from './daysOfMonth';
 
 class Calendar extends Component {
+  componentDidMount() {
+    this.props.setDateToday();
+  };
+
   render () {
     return (
       <div className="calendarContainer">
         <Weekdays />
-        <DaysOfMonth date={this.props.date}
-                     changeDateInMonth={this.props.changeDateInMonth} />
+        <DaysOfMonth {...this.props} />
       </div>
     )
   };
