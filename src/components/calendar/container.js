@@ -25,11 +25,14 @@ class Calendar extends Component {
 function mapStateToProps(state) {
   return {
     date: state.date,
+    activeID: state.activeID,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
+    setDateToday: setDateToday,
+    setActiveToday: setActiveToday,
     changeDateInMonth: changeDateInMonth,
   }, dispatch)
 }
