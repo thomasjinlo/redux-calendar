@@ -9,9 +9,16 @@ export function setDateToday () {
 
 export function changeDateInMonth (date, selectedDay) {
   let newDate = new Date(date.getFullYear(), date.getMonth(), selectedDay);
-  console.log(newDate)
+
   return {
     type: 'SET_SELECTED_DATE',
     payload: newDate,
+  }
+}
+
+export function setActiveToday (id) {
+  return {
+    type: 'SET_ACTIVE_TODAY',
+    payload: id,
   }
 }
