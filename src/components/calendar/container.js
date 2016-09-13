@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { changeDateInMonth } from '../../actions';
 
 import './calendar.css';
 import Weekdays from './weekdays';
@@ -11,7 +12,8 @@ class Calendar extends Component {
     return (
       <div className="calendarContainer">
         <Weekdays />
-        <DaysOfMonth date={this.props.date} />
+        <DaysOfMonth date={this.props.date}
+                     changeDateInMonth={this.props.changeDateInMonth} />
       </div>
     )
   };
@@ -23,4 +25,10 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Calendar);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    changeDateInMonth: changeDateInMonth,
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
