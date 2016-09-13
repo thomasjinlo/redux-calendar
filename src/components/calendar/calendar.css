@@ -28,3 +28,31 @@
 .active {
   background-color: red;
 }
+
+.monthYearContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.monthYear {
+  height: 30px;
+  line-height: 30px;
+}
+
+.leftArrow {
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+
+  border-right: 30px solid #FE5A27;
+}
+
+.rightArrow {
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+
+  border-left: 30px solid #FE5A27;
+}
