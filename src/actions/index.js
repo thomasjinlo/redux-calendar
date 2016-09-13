@@ -22,3 +22,13 @@ export function setActiveToday (id) {
     payload: id,
   }
 }
+
+export function changeMonth (date, increment) {
+  // increment will be -1 or +1 depending on which arrow button was clicked
+  let newDate = new Date(date.getFullYear(), date.getMonth() + increment, date.getDate());
+
+  return {
+    type: 'INCREMENT_MONTH',
+    payload: newDate,
+  }
+}

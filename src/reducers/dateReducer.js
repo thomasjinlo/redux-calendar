@@ -4,6 +4,8 @@ export default function (state = new Date(), action) {
       return action.payload
     case 'SET_SELECTED_DATE':
       return action.payload
+    case 'INCREMENT_MONTH':
+      return action.payload
     default:
       return state
   }

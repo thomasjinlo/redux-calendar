@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setDateToday, changeDateInMonth, setActiveToday } from '../../actions';
+import { setDateToday, changeDateInMonth, setActiveToday, changeMonth } from '../../actions';
 
 import './calendar.css';
 import Weekdays from './weekdays';
 import DaysOfMonth from './daysOfMonth';
+import MonthYear from './monthYear';
 
 class Calendar extends Component {
   componentDidMount() {
@@ -14,9 +15,13 @@ class Calendar extends Component {
 
   render () {
     return (
-      <div className="calendarContainer">
-        <Weekdays />
-        <DaysOfMonth {...this.props} />
+      <div>
+        <MonthYear date={this.props.date}
+                   changeMonth={this.props.changeMonth} />
+        <div className="calendarContainer">
+          <Weekdays />
+          <DaysOfMonth {...this.props} />
+        </div>
       </div>
     )
   };
@@ -34,6 +39,7 @@ function mapDispatchToProps(dispatch) {
     setDateToday: setDateToday,
     setActiveToday: setActiveToday,
     changeDateInMonth: changeDateInMonth,
+    changeMonth: changeMonth,
   }, dispatch)
 }
 
