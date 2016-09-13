@@ -24,3 +24,7 @@
 .weekday {
   background-color: #FD3195;
 }
+
+.active {
+  background-color: red;
+}
