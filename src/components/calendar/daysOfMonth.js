@@ -10,17 +10,17 @@ const numDaysInMonth = date => new Date(date.getFullYear(), date.getMonth() + 1,
 const renderEmptySquares = (startDay, collection=[]) => {
   if (startDay === 0) return;
 
-  collection.push(<div key={startDay} className="squares"></div>);
+  collection.push(<EmptySquare key={startDay} startDay={startDay} />);
   renderEmptySquares((startDay - 1), collection)
 
   return collection.map( div => div);
 };
 
-const renderSquares = (daysInMonth, collection=[]) => {
-  if (daysInMonth === 0) return;
+const renderSquares = (dayInMonth, collection=[]) => {
+  if (dayInMonth === 0) return;
 
-  collection.unshift(<div key={daysInMonth} id={daysInMonth} className="squares">{daysInMonth}</div>);
-  renderSquares((daysInMonth - 1), collection);
+  collection.unshift(<Square key={dayInMonth} dayInMonth={dayInMonth} />);
+  renderSquares((dayInMonth - 1), collection);
 
   return collection.map( div => div);
 }
