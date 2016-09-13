@@ -16,14 +16,16 @@ const renderEmptySquares = (startDay, collection=[]) => {
   return collection.map( div => div);
 };
 
-const renderSquares = (dayInMonth, collection=[], changeDateInMonth, date) => {
+const renderSquares = (dayInMonth, collection=[], changeDateInMonth, date, activeID, setActiveToday) => {
   if (dayInMonth === 0) return;
-  
+
   collection.unshift(<Square key={dayInMonth}
                              dayInMonth={dayInMonth}
                              changeDateInMonth={changeDateInMonth}
-                             date={date} />);
-  renderSquares((dayInMonth - 1), collection, changeDateInMonth, date);
+                             date={date}
+                             activeID={activeID}
+                             setActiveToday={setActiveToday} />);
+  renderSquares((dayInMonth - 1), collection, changeDateInMonth, date, activeID, setActiveToday);
 
   return collection.map( div => div);
 }
@@ -32,7 +34,7 @@ export default props => {
   return (
     <div className="squaresContainer">
       { renderEmptySquares(startDay(props.date)) }
-      { renderSquares(numDaysInMonth(props.date), [], props.changeDateInMonth, props.date) }
+      { renderSquares(numDaysInMonth(props.date), [], props.changeDateInMonth, props.date, props.activeID, props.setActiveToday) }
     </div>
   )
 }
