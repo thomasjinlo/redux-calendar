@@ -4,6 +4,6 @@ import './calendar.css';
 
 export default props => {
   return (
-    <div id={props.dayInMonth} className="squares">{props.dayInMonth}</div>
+    <div id={props.dayInMonth} className="squares" onClick={() => props.changeDateInMonth(props.date, props.dayInMonth)}>{props.dayInMonth}</div>
   )
 }
