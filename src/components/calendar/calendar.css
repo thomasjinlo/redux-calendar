@@ -1,14 +1,25 @@
+.rightContainer {
+  color: grey;
+  border-left: 5px solid black;
+}
+
 .calendarContainer {
-  border: 5px solid #38004B;
+  border-top: 5px solid black;
   display: flex;
   flex-wrap: wrap;
-  background-color: #03E3F9;
+  font-weight: 700;
 }
 
 .weekdaysContainer, .squaresContainer {
+  padding: 0 0 3px 4px;
   display: flex;
   width: 100%;
+  font-size: 1.5em;
   flex-wrap: wrap;
+}
+
+.squaresContainer {
+  min-height: 335px;
 }
 
 .weekday, .squares {
@@ -17,42 +28,56 @@
   text-align: center;
   margin: 0.6%;
   width: 13%;
-  background-color: #FDFD47;
-  color: #000000;
+}
+
+.squares {
+  cursor: pointer;
+}
+
+.emptySquares {
+  background-color: transparent;
 }
 
 .weekday {
-  background-color: #FD3195;
+  color: red;
 }
 
 .active {
+  color: white;
+  border-radius: 4%;
   background-color: red;
 }
 
 .monthYearContainer {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .monthYear {
-  height: 30px;
-  line-height: 30px;
+  font-weight: 700;
+  line-height: 2;
+  font-size: 1.5em;
 }
 
 .leftArrow {
   width: 0;
   height: 0;
-  border-top: 17px solid transparent;
-  border-bottom: 17px solid transparent;
+  margin-left: 10px;
+  cursor: pointer;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 
-  border-right: 30px solid #FE5A27;
+  border-right: 15px solid grey;
 }
 
 .rightArrow {
   width: 0;
   height: 0;
-  border-top: 17px solid transparent;
-  border-bottom: 17px solid transparent;
+  margin-right: 10px;
+  cursor: pointer;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 
-  border-left: 30px solid #FE5A27;
+  border-left: 15px solid grey;
 }

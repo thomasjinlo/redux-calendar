@@ -5,8 +5,10 @@ const wordDay = (date, WEEKDAYS) => WEEKDAYS[date.getDay()];
 
 export default props => {
   return (
-    <div>
-      { wordDay(props.date, WEEKDAYS) }
+    <div className="wordDay">
+      <div className="word">
+        { wordDay(props.date, WEEKDAYS) }
+      </div>
     </div>
   )
 }

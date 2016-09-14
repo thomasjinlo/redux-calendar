@@ -4,6 +4,6 @@ import './calendar.css';
 
 export default props => {
   return (
-    <div className="squares"></div>
+    <div className="squares emptySquares"></div>
   )
 };

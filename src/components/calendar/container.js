@@ -15,7 +15,7 @@ class Calendar extends Component {
 
   render () {
     return (
-      <div>
+      <div className="rightContainer">
         <MonthYear date={this.props.date}
                    changeMonth={this.props.changeMonth} />
         <div className="calendarContainer">

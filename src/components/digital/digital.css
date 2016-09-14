@@ -1,0 +1,28 @@
+.digitalContainer {
+  width: 50%%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  background-color: rgba(79, 130, 88, 0.1);
+}
+
+.wordDay {
+  padding: 0 100px 0;
+  line-height: 2;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: #AA0114;
+  border-bottom: 5px solid black;
+  color: white;
+}
+
+.word {
+  width: 150px;
+}
+
+.numDay {
+  font-weight: 900;
+  font-size: 8em;
+  text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.7);
+  margin: 23%;
+}

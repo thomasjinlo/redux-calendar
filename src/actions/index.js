@@ -23,12 +23,24 @@ export function setActiveToday (id) {
   }
 }
 
+const checkLastDate = (date, increment) => {
+  let currentMonth = date.getDate();
+  let nextMonth = new Date(date.getFullYear(), date.getMonth() + increment, date.getDate()).getDate();
+
+  if ( currentMonth === nextMonth ) {
+    return new Date(date.getFullYear(), date.getMonth() + increment, date.getDate())
+  } else {
+    return new Date(date.getFullYear(), date.getMonth() + increment + increment, 0);
+  }
+}
+
 export function changeMonth (date, increment) {
   // increment will be -1 or +1 depending on which arrow button was clicked
-  let newDate = new Date(date.getFullYear(), date.getMonth() + increment, date.getDate());
+  let newDate = date.getDate() < 29 ? new Date(date.getFullYear(), date.getMonth() + increment, date.getDate()) : checkLastDate(date, increment)
+  let id = newDate.getDate();
 
-  return {
-    type: 'INCREMENT_MONTH',
-    payload: newDate,
+  return (dispatch) => {
+    dispatch({type: 'INCREMENT_MONTH', payload: newDate})
+    dispatch({type: 'SET_ACTIVE_TODAY', payload: id})
   }
 }

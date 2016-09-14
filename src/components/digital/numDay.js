@@ -4,7 +4,7 @@ const numDay = date => date.getDate();
 
 export default props => {
   return (
-    <div>
+    <div className="numDay">
       { numDay(props.date) }
     </div>
   )
