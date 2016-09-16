@@ -17,7 +17,6 @@ const renderEmptySquares = (startDay, collection=[]) => {
 };
 
 const setActive = (day, activeDay) => {
-  console.log(`ID ${day}`, `ActiveID ${activeDay}`)
   return day === activeDay ? "active" : ""
 }
 
